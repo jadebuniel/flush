@@ -4,6 +4,7 @@ import Search from '../components/Search'
 
 const Home = () => {
  const text = ''
+ document.title =`Flush - Free High Resolution Images for Creators`
  return (
   <div>
    <Search />

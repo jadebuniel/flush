@@ -16,15 +16,21 @@ const ImageList = ({term}) => {
   const res = await fetch(`https://pixabay.com/api/?key=19273103-9fda3e0c5e653fb65d691e169&q=${query}&image_type=photo&page=${currentPage}`)
   const data = await res.json()
   try {
-   setImages([...images, ...data.hits])
+   setImages(prev => {
+     return [...prev, ...data.hits]
+   })
    setTotalPage(Math.ceil(data.totalHits / 20))
   } catch (err) {
     console.log(err)
   }
  }
+ useEffect(() => {
+  setImages([])
+ }, [term])
 
  useEffect(() => {
   fetchData(term)
+
  }, [term, currentPage])
 
  const breakpointColumnsObj = {

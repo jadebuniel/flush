@@ -44,6 +44,10 @@
         outline: none;
         font-size: 1.25rem;
         text-transform: capitalize;
+        font-weight: 700;
+        &::placeholder {
+          font-weight: 400;
+        }
       }
       .search-btn {
         position: absolute;

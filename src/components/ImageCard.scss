@@ -1,6 +1,7 @@
 .image-container {
   position: relative;
   cursor: zoom-in;
+  border-radius: 10px;
   .image-overlay {
     position: absolute;
     top: 0;
@@ -55,6 +56,9 @@
         cursor: pointer;
         border-radius: 10px;
         font-size: 1rem;
+        &:hover {
+          transform: scale(0.95);
+        }
       }
     }
   }
