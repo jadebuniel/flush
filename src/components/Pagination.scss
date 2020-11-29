@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  button {
+    padding: 0.5rem 2rem;
+    outline: none;
+    border: 2px solid black;
+    background: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .prev {
+    &:hover {
+      color: white;
+      background: black;
+    }
+  }
+  .next {
+    &:hover {
+      color: white;
+      background: black;
+    }
+  }
+}
