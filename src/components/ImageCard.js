@@ -4,9 +4,9 @@ import './ImageCard.scss'
 const ImageCard = ({ image, toggleModal, clickImage }) => {
  const userProfile = `https://pixabay.com/users/${image.user}-${image.user_id}/`
 
- const handleClick = () => {
+ const handleClick = async() => {
+   await clickImage(image)
    toggleModal(true)
-   clickImage(image)
 
  }
  return (
@@ -28,4 +28,3 @@ const ImageCard = ({ image, toggleModal, clickImage }) => {
 }
 
 export default ImageCard
-

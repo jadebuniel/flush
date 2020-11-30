@@ -23,3 +23,7 @@ html {
 .infinite-scroll-component {
   overflow-y: hidden !important;
 }
+.loading-image {
+  display: block;
+  margin: 0 auto;
+}

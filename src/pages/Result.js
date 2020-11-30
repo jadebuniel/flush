@@ -9,7 +9,7 @@ const Result = () => {
  const title = query.split(" ")
  const titleSearch = title.map((ti) => ti.charAt(0).toUpperCase() + ti.slice(1))
  const titleFinal = titleSearch.join().replaceAll(",", " ")
- document.title = `${titleFinal} - Flush - Free High Resolution Images for Creators`
+ document.title = `${titleFinal} - Free High Resolution Images for Creators`
  return (
   <div>
     <Search/>
