@@ -10,6 +10,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  position: relative;
+  /* overflow-y: hidden; */
 }
 a {
   text-decoration: none;

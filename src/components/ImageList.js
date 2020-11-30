@@ -3,12 +3,18 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import Masonry from 'react-masonry-css'
 import ImageCard from './ImageCard'
 import "./ImageList.scss"
+import Modal from './Modal'
 
 
 const ImageList = ({term}) => {
  const [images, setImages] = useState([])
  const [totalPage, setTotalPage] = useState(0)
  const [currentPage, setCurrentPage] = useState(1)
+ const [openModal, setOpenModal] = useState(false)
+ const [imageModal, setImageModal] = useState([])
+
+ const body = document.querySelector('body')
+ body.style.overflowY = openModal ? "hidden" : "scroll"
 
  
 
@@ -43,9 +49,10 @@ const ImageList = ({term}) => {
   <InfiniteScroll dataLength={images.length} next={() => setCurrentPage(currentPage + 1)} hasMore={true}>
    <Masonry breakpointCols={breakpointColumnsObj} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
    {images.map((image, index) => (
-    <ImageCard image={image} key={index}/>
-   ))}
+    <ImageCard image={image} key={index} toggleModal={(toggle) => setOpenModal(toggle)} clickImage={(click) => setImageModal(click)}/>
+    ))}
   </Masonry>
+   <Modal modalStatus={openModal} toggleModal={(toggle) => setOpenModal(toggle)} image={images} info={imageModal}/>
   </InfiniteScroll>
   </>
  )

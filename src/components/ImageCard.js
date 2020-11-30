@@ -1,10 +1,16 @@
 import React from 'react'
 import './ImageCard.scss'
 
-const ImageCard = ({ image }) => {
+const ImageCard = ({ image, toggleModal, clickImage }) => {
  const userProfile = `https://pixabay.com/users/${image.user}-${image.user_id}/`
+
+ const handleClick = () => {
+   toggleModal(true)
+   clickImage(image)
+
+ }
  return (
-  <div className="image-container ">
+  <div className="image-container" onClick={() => handleClick()}>
    <div className="image-overlay">
     <div className="image-action">
      <div className="author">
